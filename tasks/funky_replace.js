@@ -10,18 +10,12 @@
 
 module.exports = function(grunt) {
 
-  /**
-   * Failed.
-   */
   function failed(message, error) {
     if (error) grunt.log.error(error);
     grunt.fail.warn(message || 'Task failed.');
   }
 
-  /**
-   * Register task.
-   */
-  grunt.registerMultiTask('funky_replace', 'Replace strings in files.', function() {
+  grunt.registerMultiTask('funky_replace', function() {
     var opts = this.options({
       regexp: null,
       replacement: ''
@@ -47,7 +41,7 @@ module.exports = function(grunt) {
       return;
     }
 
-    // Loop through each file mapping
+    // Loop through file mappings
     this.files.forEach(function(fileMapping) {
       // Make sure we have files to update
       var files = fileMapping.src.filter(function(filepath) {
@@ -89,7 +83,7 @@ module.exports = function(grunt) {
         src = src.replace(regexp, replacement);
         grunt.file.write(destPath, src);
 
-        grunt.log.writeln('Updated: ' + destPath.cyan);
+        grunt.log.ok('Updated: ' + destPath);
       });
     });
   });
