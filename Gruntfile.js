@@ -1,11 +1,3 @@
-/*
- * grunt-funky-replace
- * https://github.com/davemedema/grunt-funky-replace
- *
- * Copyright (c) 2013 Dave Medema
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 module.exports = function(grunt) {
@@ -103,14 +95,14 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>'
+        'tasks/**/*.js',
+        '<%= nodeunit.files %>'
       ]
     },
 
     // `nodeunit`
     nodeunit: {
-      tests: ['test/*_test.js']
+      files: ['test/**/*_test.js']
     }
 
   });

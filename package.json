@@ -34,6 +34,7 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "funky-grunt-utils": "*",
     "grunt": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-jshint": "*",
