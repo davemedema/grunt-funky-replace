@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   var utils = require('funky-grunt-utils')(grunt);
 
   // Register task
-  grunt.registerMultiTask('funky_replace', function() {
+  grunt.registerMultiTask('replace', function() {
     var opts = this.options({
       regexp: null,
       replacement: ''

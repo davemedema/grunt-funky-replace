@@ -15,8 +15,25 @@ module.exports = function(grunt) {
       all: ['tmp']
     },
 
-    // `funky_replace`
-    funky_replace: {
+    // `jshint`
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'tasks/**/*.js',
+        '<%= nodeunit.files %>'
+      ]
+    },
+
+    // `nodeunit`
+    nodeunit: {
+      files: ['test/**/*_test.js']
+    },
+
+    // `replace`
+    replace: {
       string_regexp: {
         options: {
           regexp: 'FOO',
@@ -86,25 +103,7 @@ module.exports = function(grunt) {
         },
         src: ['test/fixtures/no_dest.json']
       }
-    },
-
-    // `jshint`
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      all: [
-        'Gruntfile.js',
-        'tasks/**/*.js',
-        '<%= nodeunit.files %>'
-      ]
-    },
-
-    // `nodeunit`
-    nodeunit: {
-      files: ['test/**/*_test.js']
     }
-
   });
 
   // Load tasks
@@ -124,11 +123,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('release', function(type) {
     grunt.task.run('test');
-    grunt.task.run('funky_bump:' + (type || 'patch'));
-    grunt.task.run('funky_tag');
+    grunt.task.run('bump:' + (type || 'patch'));
+    grunt.task.run('tag');
   });
 
-  grunt.registerTask('test', ['clean', 'jshint', 'funky_replace', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'jshint', 'replace', 'nodeunit']);
   grunt.registerTask('t', ['test']);
 
 };
