@@ -17,14 +17,14 @@ module.exports = function(grunt) {
 
   var utils = require('funky-grunt-utils')(grunt);
 
-  // Register task
+  // register task
   grunt.registerMultiTask('replace', function() {
     var opts = this.options({
       regexp: null,
       replacement: ''
     });
 
-    // Validate regexp
+    // validate regexp
     var regexp = null;
 
     switch (typeof opts.regexp) {
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       utils.fail('Invalid regexp "' + regexp + '".');
     }
 
-    // Update
+    // update
     this.files.forEach(function(fm) {
       fm.src.forEach(function(filepath) {
         var dest    = fm.dest || filepath;
