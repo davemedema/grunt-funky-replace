@@ -15,8 +15,6 @@
  */
 module.exports = function(grunt) {
 
-  var utils = require('funky-grunt-utils')(grunt);
-
   // register task
   grunt.registerMultiTask('replace', function() {
     var opts = this.options({
@@ -40,7 +38,7 @@ module.exports = function(grunt) {
     }
 
     if (!regexp instanceof RegExp) {
-      utils.fail('Invalid regexp "' + regexp + '".');
+      grunt.warn('Invalid regexp "' + regexp + '".');
     }
 
     // update
