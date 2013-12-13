@@ -1,7 +1,7 @@
 {
   "name": "grunt-funky-replace",
   "description": "Replace strings in files.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/davemedema/grunt-funky-replace",
   "author": {
     "name": "Dave Medema",
