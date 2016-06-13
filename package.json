@@ -1,7 +1,7 @@
 {
   "name": "grunt-funky-replace",
   "description": "Replace strings in files.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/davemedema/grunt-funky-replace",
   "author": {
     "name": "Dave Medema",
@@ -23,9 +23,6 @@
     }
   ],
   "main": "Gruntfile.js",
-  "peerDependencies": {
-    "grunt": "~0.4.1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/davemedema/grunt-funky-replace.git"
